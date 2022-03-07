@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RASMUS</title>
-        <link rel="icon" type="image/x-icon" href="../../SVG/terminal.svg">
+        <title>Web-Spinner</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
