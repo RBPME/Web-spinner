@@ -8,6 +8,8 @@
     </head>
     <body>
         <?php require_once './SQL/DB_handleling/connect.php'; ?>
+
+        <!-- får brugerens input --> 
         <form action="#" method="post">
             E-mail: <input type="text" name="Email"><br>
             Username: <input type="text" name="user"><br>
@@ -22,8 +24,10 @@
             $pass=$_POST["pass"];
             $passhash=hash('sha256', $pass, false);
 
+            //Læser DB
             $result = preformQuery("SELECT * From user");
 
+            //Tjekker om E-mail er tilgængelig
             function EmailAvailable($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -34,6 +38,7 @@
                 return true;
             }
 
+            //Tjekker om brugernavn er tilgængelig
             function nameAvailable($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -44,6 +49,7 @@
                 return true;
             }
 
+            //Indsætter værdier i DB
             if (EmailAvailable($Email) && nameAvailable($name) && $pass != null) {
                 preformQuery("INSERT INTO user (username, password, email) VALUES ('$name', '$passhash', '$Email')");
             }
