@@ -29,9 +29,6 @@
                 while ($row = mysqli_fetch_array($result)) {
                     if ($row['email'] == $e || $e == null) {
                         return false;
-                        break;
-                    } else {
-                        continue;
                     }
                 }
                 return true;
@@ -42,9 +39,6 @@
                 while ($row = mysqli_fetch_array($result)) {
                     if ($row['username'] == $e || $e == null) {
                         return false;
-                        break;
-                    } else {
-                        continue;
                     }
                 }
                 return true;
