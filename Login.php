@@ -8,7 +8,7 @@
         <div class="formdiv">
             <form method="POST" action="">
                 <input type="text" name="user"> <br>
-                <input type="password" name="pass" id="pass"> <button type="button" onclick="clicked()"><img src="/SVG/circle_full.svg" width="8rem"></button> <br>
+                <input type="password" name="pass" id="pass"> <button type="button" onclick="clicked()"><img src="Find et billede senere" width="8rem"></button> <br>
                 <input type="submit" value="Log in">
             </form>
             <br>
@@ -30,11 +30,22 @@
                         echo "Wrong password";
                     }
                 }
+
+                //never gonna give you up
+                //never gonna let you down
+                //never gonna run around and desert you
+                
+                //never gonna make you cry
+                //never gonna say goodbye
+                //never gonna tell a lie and hurt you
+
             ?>
 
         </div>
 
         <?php 
+
+            //Tjekker om brugernavn er i DB
             function userExists($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -48,6 +59,7 @@
                 return false;  
             }
 
+            //Tjekker om password passer til brugernavn
             function passMatch($u, $p) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -64,6 +76,7 @@
                 return false;
             }
 
+            //Finder brugerid i DB
             function getUserId($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
