@@ -11,13 +11,7 @@
                 <input type="password" name="pass" id="pass"> <button type="button" onclick="clicked()"><img src="Find et billede senere" width="8rem"></button> <br>
                 <input type="submit" value="Log in">
             </form>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
+            
             <?php 
                 require_once "./SQL/DB_handleling/connect.php";
                 if ($_POST["user"] != null && $_POST["pass"] != null) {
