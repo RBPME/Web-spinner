@@ -8,7 +8,7 @@
     </head>
 
 
-<!-- indput af vores email kode og brugernavn-->
+    <!-- input af vores email kode og brugernavn-->
     <body>
         <?php require_once './SQL/DB_handleling/connect.php'; ?>
 
@@ -22,7 +22,7 @@
 
         <?php
 
-//læser DB
+            
             $Email=$_POST["Email"];
             $name=$_POST["user"];
             $pass=$_POST["pass"];

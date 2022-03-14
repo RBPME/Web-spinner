@@ -21,21 +21,15 @@
             <?php 
                 require_once "./SQL/DB_handleling/connect.php";
                 if ($_POST["user"] != null && $_POST["pass"] != null) {
-                    echo "fghjk";
                     if (!userExists($_POST["pass"])) {
                         echo "The user does not exist. You can sign up <a href='SignUp.php'>here.</a>";
                     } else if (passMatch($_POST["user"], $_POST["pass"])) {
                         $_SESSION['LoggedIn'] = true;
                         $_SESSION['UserId'] = getUserId($_POST["user"]);
-
-                        echo "logged in";
                     } else {
                         echo "Wrong password";
                     }
-                } else {
-                    echo "You fucked up";
                 }
-
             ?>
 
         </div>
