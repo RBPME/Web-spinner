@@ -2,8 +2,7 @@
 <!-- html for udsene-->
 <html>
     <head>
-        <title>RASMUS</title>
-        <link rel="icon" type="image/x-icon" href="../../SVG/terminal.svg">
+        <title>Web-Spinner</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -12,6 +11,8 @@
 <!-- indput af vores email kode og brugernavn-->
     <body>
         <?php require_once './SQL/DB_handleling/connect.php'; ?>
+
+        <!-- får brugerens input -->
         <form action="#" method="post">
             E-mail: <input type="text" name="Email"><br>
             Username: <input type="text" name="user"><br>
@@ -27,9 +28,10 @@
             $pass=$_POST["pass"];
             $passhash=hash('sha256', $pass, false);
 
+            //Læser DB
             $result = preformQuery("SELECT * From user");
 
-//tjekker om email er tilgengeligt
+            //Tjekker om E-mail er tilgængelig
             function EmailAvailable($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -40,7 +42,7 @@
                 return true;
             }
 
-//tjekker om brugernavnet er tilgengeligt
+            //Tjekker om brugernavn er tilgængelig
             function nameAvailable($e) {
                 global $result;
                 while ($row = mysqli_fetch_array($result)) {
@@ -51,6 +53,7 @@
                 return true;
             }
 
+            //Indsætter værdier i DB
             if (EmailAvailable($Email) && nameAvailable($name) && $pass != null) {
                 preformQuery("INSERT INTO user (username, password, email) VALUES ('$name', '$passhash', '$Email')");
             }
