@@ -17,8 +17,11 @@
             
             <?php 
                 require_once "./SQL/DB_handleling/connect.php";
+
+
+
                 if ($_POST["user"] != null && $_POST["pass"] != null) {
-                    if (!userExists($_POST["pass"])) {
+                    if (!userExists($_POST["user"])) {
                         echo "The user does not exist. You can sign up <a href='SignUp.php'>here.</a>";
                     } else if (passMatch($_POST["user"], $_POST["pass"])) {
                         $_SESSION['LoggedIn'] = true;
@@ -27,6 +30,8 @@
                         echo "Wrong password";
                     }
                 }
+
+
 
                 //never gonna give you up
                 //never gonna let you down
@@ -44,47 +49,26 @@
 
             //Tjekker om brugernavn er i DB
             function userExists($e) {
-                global $result;
+                $result = preformQuery("SELECT username FROM user");
                 while ($row = mysqli_fetch_array($result)) {
-                    if ($row['username'] == $e) {
-                        return true;
-                        break;
-                    } else {
-                        continue;
-                    }
+                    return $row['username'] == $e;
                 }
-                return false;  
             }
 
             //Tjekker om password passer til brugernavn
             function passMatch($u, $p) {
-                global $result;
+                $result = preformQuery("SELECT password FROM user WHERE username = '$u'");
                 while ($row = mysqli_fetch_array($result)) {
-                    if ($row['username'] == $u) {
-                        if ($row['password'] == hash('sha256', $p, false)) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    } else {
-                        continue;
-                    }
+                    return $row['password'] == hash('sha256', $p, false);
                 }
-                return false;
             }
 
             //Finder brugerid i DB
             function getUserId($e) {
-                global $result;
+                $result = preformQuery("SELECT id FROM user WHERE username = '$e'");
                 while ($row = mysqli_fetch_array($result)) {
-                    if ($row['username'] == $e) {
-                        return $row['id'];
-                        break;
-                    } else {
-                        continue;
-                    }
+                    return $row['id'];
                 }
-                return null;
             }
         ?>
 

@@ -29,12 +29,9 @@
             $pass=$_POST["pass"];
             $passhash=hash('sha256', $pass, false);
 
-            //Læser DB
-            $result = preformQuery("SELECT * From user");
-
             //Tjekker om E-mail er tilgængelig
             function EmailAvailable($e) {
-                global $result;
+                $result = preformQuery("SELECT email FROM user");
                 while ($row = mysqli_fetch_array($result)) {
                     if ($row['email'] == $e || $e == null) {
                         return false;
@@ -45,8 +42,9 @@
 
             //Tjekker om brugernavn er tilgængelig
             function nameAvailable($e) {
-                global $result;
+                $result = preformQuery("SELECT username FROM user");
                 while ($row = mysqli_fetch_array($result)) {
+                    echo $row['username'];
                     if ($row['username'] == $e || $e == null) {
                         return false;
                     }
