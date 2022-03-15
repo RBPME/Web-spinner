@@ -9,12 +9,13 @@
     <body>
         <form method="post" action="">
             <textarea name="textinp" id="" cols="30" rows="10"></textarea><br>
+            <input type="file" name="imgup"> <br>
             <input type="submit">
         </form>
 
         <?php 
 
-        echo str_replace("\n", "<br>", $_POST['textinp']);
+            $storetext = str_replace("\n", "<br>", $_POST['textinp']);
         
         ?>
 
