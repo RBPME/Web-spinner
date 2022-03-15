@@ -15,7 +15,7 @@
 
         <!-- får brugerens input -->
         <form action="#" method="post">
-            E-mail: <input type="text" name="Email"><br>
+            E-mail: <input type="email" name="Email"><br>
             Username: <input type="text" name="user"><br>
             Password: <input type="password" name="pass"><br>
             <input type="submit">
