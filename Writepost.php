@@ -7,6 +7,16 @@
         <title>Web-Spinner</title>
     </head>
     <body>
+        <form method="post" action="">
+            <textarea name="textinp" id="" cols="30" rows="10"></textarea><br>
+            <input type="submit">
+        </form>
+
+        <?php 
+
+        echo str_replace("\n", "<br>", $_POST['textinp']);
         
+        ?>
+
     </body>
 </html>
