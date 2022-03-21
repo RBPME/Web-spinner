@@ -7,7 +7,7 @@
         <title>Web-Spinner</title>
     </head>
     <body>
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             <input type="text" name="title"><br>
             <textarea name="textinp" id="" cols="30" rows="10"></textarea><br>
             <input type="file" name="imgup"> <br>
@@ -22,7 +22,11 @@
             $imgname = $_FILES['imgup']['name'];
             $imgpath = 'DBimg/'.$imgname;
 
+
+            
+            //echo "<img src='".$row['img_path']."' width='100px'>";
             if ($title != null) {
+                move_uploaded_file($tempname,$imgpath);
                 preformQuery("INSERT INTO content (text, imgpath, title) VALUES ('$text', '$imgpath', '$title')");
             }
 
