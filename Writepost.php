@@ -15,7 +15,7 @@
         </form>
 
         <?php 
-
+            require_once "./SQL/DB_handleling/connect.php";
             $title = $_POST['title'];
             $text = $_POST['textinp'];
             $tempname = $_FILES['imgup']['tmp_name'];
