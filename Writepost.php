@@ -8,6 +8,7 @@
     </head>
     <body>
         <form method="post" action="">
+            <input type="text" name="title"><br>
             <textarea name="textinp" id="" cols="30" rows="10"></textarea><br>
             <input type="file" name="imgup"> <br>
             <input type="submit">
@@ -15,7 +16,35 @@
 
         <?php 
 
-            $storetext = str_replace("\n", "<br>", $_POST['textinp']);
+            $title = $_POST['title'];
+            $text = $_POST['textinp'];
+            $tempname = $_FILES['imgup']['tmp_name'];
+            $imgname = $_FILES['imgup']['name'];
+            $imgpath = 'DBimg/'.$imgname;
+
+            if ($title != null) {
+                preformQuery("INSERT INTO content (text, imgpath, title) VALUES ('$text', '$imgpath', '$title')");
+            }
+
+            //$storetext = str_replace("\n", "<br>", $_POST['textinp']);
+
+
+            // **************************************************************************************
+            //PLAN
+            // *************************************************************************************
+
+
+            //how to store
+            //Store text in DB
+            //Store img on serv
+            //Store img path on DB
+            //give auto id in DB
+
+            //how to view
+            //GET id (store in url)
+            //get text
+            //get img
+            //display on page
         
         ?>
 
