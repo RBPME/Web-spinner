@@ -56,7 +56,7 @@
                 preformQuery("INSERT INTO user (username, password, email) VALUES ('$name', '$passhash', '$Email')");
                 header("Location: https://rasm245r.elev.vtg.dk");
             } else {
-                echo "The username or E-mail is allready in use, please <a href'https://rasm245r.elev.vtg.dk/Login.php'>Log in</a> or use a different E-mail/username."
+                echo "The username or E-mail is allready in use, please <a href'https://rasm245r.elev.vtg.dk/Login.php'>Log in</a> or use a different E-mail/username.";
             }
 
         ?>
