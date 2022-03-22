@@ -7,6 +7,6 @@
         <title>Web-Spinner</title>
     </head>
     <body>
-        
+        <img src="/Images/logo Web-Spinner.PNG" alt="">
     </body>
 </html>
