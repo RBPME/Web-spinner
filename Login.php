@@ -26,6 +26,7 @@
                     } else if (passMatch($_POST["user"], $_POST["pass"])) {
                         $_SESSION['LoggedIn'] = true;
                         $_SESSION['UserId'] = getUserId($_POST["user"]);
+                        header("Location: https://rasm245r.elev.vtg.dk");
                     } else {
                         echo "Wrong password";
                     }
@@ -51,7 +52,9 @@
             function userExists($e) {
                 $result = preformQuery("SELECT username FROM user");
                 while ($row = mysqli_fetch_array($result)) {
-                    return $row['username'] == $e;
+                    if ($row['username'] == $e) {
+                        return true;
+                    }
                 }
             }
 
