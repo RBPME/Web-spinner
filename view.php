@@ -11,19 +11,16 @@
     <?php
         require_once "./SQL/DB_handleling/connect.php"; 
         $id = $_GET['id'];
-        $result = preformQuery("SELECT * FROM content WHERE id = 1");
+        $result = preformQuery("SELECT * FROM content WHERE id = ".$id."");
         $row = mysqli_fetch_array($result);
-        print_r($result);
-        echo '<br>';
-        print_r($row);
     ?>
 
     <h1><?php echo $row['title']; ?></h1> <br>
         <?php
         
             echo str_replace("\n", "<br>", $row['text']);
-            echo '<br>';
-            echo "<img src='".$row['imgpath']."' width='100px'>";
+            echo '<br><br>';
+            echo "<img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'>";
         
         ?>
 
