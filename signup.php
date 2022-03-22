@@ -44,7 +44,6 @@
             function nameAvailable($e) {
                 $result = preformQuery("SELECT username FROM user");
                 while ($row = mysqli_fetch_array($result)) {
-                    echo $row['username'];
                     if ($row['username'] == $e || $e == null) {
                         return false;
                     }
@@ -55,6 +54,9 @@
             //Indsætter værdier i DB
             if (EmailAvailable($Email) && nameAvailable($name) && $pass != null) {
                 preformQuery("INSERT INTO user (username, password, email) VALUES ('$name', '$passhash', '$Email')");
+                header("Location: https://rasm245r.elev.vtg.dk");
+            } else {
+                echo "The username or E-mail is allready in use, please <a href'https://rasm245r.elev.vtg.dk/Login.php'>Log in</a> or use a different E-mail/username."
             }
 
         ?>

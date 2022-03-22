@@ -28,6 +28,7 @@
             if ($title != null) {
                 move_uploaded_file($tempname,$imgpath);
                 preformQuery("INSERT INTO content (text, imgpath, title) VALUES ('$text', '$imgpath', '$title')");
+                header("Location: https://rasm245r.elev.vtg.dk");
             }
 
             //$storetext = str_replace("\n", "<br>", $_POST['textinp']);
