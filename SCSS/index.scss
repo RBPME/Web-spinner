@@ -1,15 +1,6 @@
-.dark {
-    --bg-primary: #2d3436;
-    --bg-secondary: #636e72;
-}
+@use 'base';
 
-.light {
-    --bg-primary: #dfe6e9;
-    --bg-primary: #b2bec3;
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    background-color: var(--bg-primary);
+.bar {
+    position: absolute;
+    height: 3rem;
 }
