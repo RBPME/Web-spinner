@@ -10,7 +10,7 @@
         <?php 
             session_start();
         ?>
-        <img src="Images/LogoWebSpinner.PNG" alt="">
+        <img src="Images/LogoWebSpinner.svg" alt="">
         <br>
         <br>
         <?php 
