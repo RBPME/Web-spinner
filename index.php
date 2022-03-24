@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Web-Spinner</title>
+        <script src='JS/darkmode.js'></script>
     </head>
-    <body>
+    <body class="light" onload="loaded()">
         <?php 
             session_start();
         ?>
