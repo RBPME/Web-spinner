@@ -1,17 +1,44 @@
-/* Error: $color: from var(--bg-secondary) is not a color.
- *    ,
- * 20 |     background-color: lighten(from var(--bg-secondary), 5%);
- *    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   SCSS\index.scss 20:23  root stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+.dark {
+  --bg-primary: #2d3436;
+  --bg-secondary: #34495e;
+  --text-primary: #bdc3c7;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: $color: from var(--bg-secondary) is not a color.\a    \2577 \a 20 \2502      background-color: lighten(from var(--bg-secondary), 5%);\d\a    \2502                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   SCSS\\index.scss 20:23  root stylesheet";
+.light {
+  --bg-primary: #ecf0f1;
+  --bg-secondary: #bdc3c7;
+  --text-primary: #000;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bar {
+  position: fixed;
+  height: 3rem;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+h2 {
+  margin: 0.5rem;
+  text-transform: capitalize;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  left: 0;
+  width: 2rem;
 }

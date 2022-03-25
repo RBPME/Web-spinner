@@ -1,4 +1,4 @@
-@use 'base';
+@import "./partials/base";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 .bar {
@@ -17,7 +17,6 @@ h2 {
 
 .sidebar {
     height: 100vh;
-    background-color: lighten(var(--bg-secondary), 5%);
     left: 0;
     width: 2rem;
 }
