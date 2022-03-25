@@ -1,6 +1,23 @@
 @use 'base';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 .bar {
-    position: absolute;
+    position: fixed;
     height: 3rem;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+h2 {
+    margin: 0.5rem;
+    text-transform: capitalize;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: lighten(var(--bg-secondary), 5%);
+    left: 0;
+    width: 2rem;
 }

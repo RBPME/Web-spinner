@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Web-Spinner</title>
         <script src='JS/darkmode.js'></script>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body class="light" onload="loaded()">
         <?php 
@@ -36,16 +36,15 @@
         <div class="bar">
             <h2>OPSLAG</h2>
         </div>
-        <br>
-        <br>
         <?php 
+        /*
             if ($_SESSION['LoggedIn']) {
                 echo '<a href="Logout.php">Log-out</a><br><a href="Writepost.php">make a post</a><br>';
             } else {
                 echo '<a href="Login.php">Log-in</a><br><a href="signup.php">Sign-up</a><br>';
             }
+            */
         ?>
-        <br>
         <?php 
             require_once "./SQL/DB_handleling/connect.php";
             $result = preformQuery("SELECT * FROM content");
@@ -55,5 +54,6 @@
                 echo "<br><img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'>";
             }
         ?>
+        <div class="sidebar"></div>
     </body>
 </html>
