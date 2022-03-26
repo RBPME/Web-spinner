@@ -1,13 +1,20 @@
+:root {
+    font-size: 16px;
+    --speed: 0.9s;
+}
+
 .dark {
     --bg-primary: #2d3436;
     --bg-secondary: #34495e;
     --text-primary: #bdc3c7;
+    --comp-primary: #3d566e;
 }
 
 .light {
     --bg-primary: #ecf0f1;
     --bg-secondary: #bdc3c7;
     --text-primary: #000;
+    --comp-primary: #afb6bb;
 }
 
 body {

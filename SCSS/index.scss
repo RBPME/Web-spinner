@@ -1,5 +1,20 @@
 @import "./partials/base";
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Quicksand&display=swap');
+
+* {
+    transition: width --speed;
+}
+
+main {
+    position: absolute;
+    left: 5rem;
+    top: 3rem;
+    transition: left var(--speed);
+    
+    &.ex{
+        left: 20rem;
+    }
+}
 
 .bar {
     position: fixed;
@@ -7,16 +22,119 @@
     width: 100%;
     background-color: var(--bg-secondary);
     text-align: center;
+
+    h2 {
+        margin: 0.5rem;
+        text-transform: capitalize;
+        font-family: 'Quicksand', sans-serif;
+    }
 }
 
-h2 {
-    margin: 0.5rem;
-    text-transform: capitalize;
-    font-family: 'Quicksand', sans-serif;
+.posts {
+    ul {
+        list-style: none;
+        
+        li {
+            a {
+                .postdiv {
+
+                    display: grid;
+                    grid-template: 3rem, 1fr;
+
+                }
+            }
+        }
+    }
 }
 
 .sidebar {
+    position: fixed;
     height: 100vh;
+    background-color: var(--comp-primary);
     left: 0;
-    width: 2rem;
+    box-shadow: -0.5rem 0 1rem rgba(0,0,0,0.5);
+    width: 5rem;
+    transition: width var(--speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    &.ex {
+        width: 20rem !important;
+        
+        .logodiv {
+            width: 20rem !important;
+        }
+    }
+
+    .navlist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+
+        .nav-item {
+            padding: 0;
+            margin: 0;
+            color: var(--text-primary);
+            display: flex;
+
+            .logodiv {
+                display: grid;
+                grid-template-columns: max-content max-content;
+                transform: translate(-50%, 0);
+                margin-left: 50%;
+                margin-top: 0;
+                height: 4rem;
+                width: 5rem;
+                //background-color: rgba(255,255,255,0.15);
+                cursor: pointer;
+                transition: width var(--speed);
+                padding-top: 0.5rem;
+        
+                
+                svg {
+                    position: absolute;
+                    margin: 0;
+                    padding: 0;
+                    height: 3rem;
+                    width: auto;
+                    transform: translate(-50%, -50%);
+                    left: 2rem;
+                    top: 2.5rem;
+                    display: block;
+                    fill: var(--text-primary);
+                    
+                    &.logo {
+                        left: 2.5rem;
+                        margin-right: 2.8rem;
+                    }
+                }
+                span {
+                    font-family: 'DM Mono', monospace;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin: 0.7rem 5.2rem;
+                    padding: 0;
+                    position: relative;
+                    font-size: 2rem;
+                    display: block; 
+                }
+                
+                &:hover{
+                    background-color: rgba(0,0,0,0.15);
+                }
+            }
+
+            &:last-child {
+                margin-top: auto;
+                margin-bottom: 0;
+                background-color: rgba(0,0,0,0.3);
+            }
+        }
+    }  
 }
