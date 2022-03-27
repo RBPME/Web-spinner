@@ -1,30 +1,30 @@
 :root {
-    font-size: 16px;
-    --speed: 0.9s;
+  font-size: 16px;
+  --speed: 0.9s;
 }
 
 .dark {
-    --bg-primary: #2d3436;
-    --bg-secondary: #34495e;
-    --text-primary: #bdc3c7;
-    --comp-primary: #3d566e;
+  --bg-primary: #2d3436;
+  --bg-secondary: #34495e;
+  --text-primary: #bdc3c7;
+  --comp-primary: #3d566e;
 }
 
 .light {
-    --bg-primary: #ecf0f1;
-    --bg-secondary: #bdc3c7;
-    --text-primary: #000;
-    --comp-primary: #afb6bb;
+  --bg-primary: #ecf0f1;
+  --bg-secondary: #bdc3c7;
+  --text-primary: #000;
+  --comp-primary: #afb6bb;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
