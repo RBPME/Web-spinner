@@ -5,19 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Web-Spinner</title>
-        <!--src='JS/darkmode.js'--><script language="JavaScript" type="text/javascript">
-            var loaded = () => {
-                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    document.body.classList.toggle("dark");
-                    document.body.classList.toggle("light");
-                }
-            }
-
-            var expand = () => {
-                document.getElementById("sidebar").classList.toggle("ex");
-                document.getElementById("content").classList.toggle("ex");
-            }
-        </script>
+        <script language="JavaScript" type="text/javascript" src='JS/darkmode.js'></script>
         <link rel="stylesheet" href="css/index.min.css">
     </head>
     <body class="light" onload="loaded()">
@@ -68,8 +56,8 @@
                         $result = preformQuery("SELECT * FROM content");
                         while ($row = mysqli_fetch_array($result)) {
                             echo '<li>';
-                            echo '<a href="https://rasm245r.elev.vtg.dk/view.php/?id='.$row['id'].'"><div class="postdiv"><div class="title">'.$row['title']."</div>";
-                            echo "<div class='img'><img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'></div></div>";
+                            echo "<a href='https://rasm245r.elev.vtg.dk/view.php/?id=".$row['id']."'><div class='postdiv' id='postdiv'><div class='img'><img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'></div>";
+                            echo '<div class="title">'.$row['title']."</div></div>";
                             echo "</a></li>";
                         }
                     ?>

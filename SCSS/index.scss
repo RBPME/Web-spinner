@@ -3,6 +3,7 @@
 
 * {
     transition: width --speed;
+    overflow-x: hidden;
 }
 
 main {
@@ -10,6 +11,7 @@ main {
     left: 5rem;
     top: 3rem;
     transition: left var(--speed);
+    overflow-y: scroll;
     
     &.ex{
         left: 20rem;
@@ -33,14 +35,43 @@ main {
 .posts {
     ul {
         list-style: none;
+        padding: 0;
+        margin: 0;
         
         li {
+            padding: 0;
+            margin: 0;
             a {
                 .postdiv {
-
+                    margin: 0;
+                    padding: 0;
                     display: grid;
-                    grid-template: 3rem, 1fr;
+                    grid-template-columns: 8rem 1fr;
+                    height: 8rem;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    transition: width var(--speed);
+                    width: calc(100vw - 5rem);
+                    overflow-y: hidden;
 
+                    &.ex {
+                        width: calc(100vw - 20rem);
+                    }
+
+                    .img {
+                        overflow: hidden;
+                        justify-content: center;
+                        height: 6rem;
+                        border-radius: 3rem;
+                        width: 6rem;
+                        position: relative;
+                        transform: translate(-50%, -50%);
+                        margin-left: 50%;
+                        margin-top: 50%;
+                    }
+                    .title {
+                        margin-left: 2rem;
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
