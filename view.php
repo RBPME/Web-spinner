@@ -7,6 +7,7 @@
         <title>Web-Spinner</title>
     </head>
     <body>
+        <a href="\index.php">Tilbage til hovedmenuen</a>
 
     <?php
         require_once "./SQL/DB_handleling/connect.php"; 
