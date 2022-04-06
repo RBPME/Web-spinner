@@ -22,7 +22,7 @@
 
                 if ($_POST["user"] != null && $_POST["pass"] != null) {
                     if (!userExists($_POST["user"])) {
-                        echo "The user does not exist. You can sign up <a href='SignUp.php'>here.</a>";
+                        echo "The user does not exist. You can sign up <a href='signup.php'>here.</a>";
                     } else if (passMatch($_POST["user"], $_POST["pass"])) {
                         $_SESSION['LoggedIn'] = true;
                         $_SESSION['UserId'] = getUserId($_POST["user"]);
