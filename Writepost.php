@@ -14,6 +14,12 @@
             <input type="submit">
         </form>
 
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="index.php">Back to main menu</a>
+
         <?php 
             require_once "./SQL/DB_handleling/connect.php";
             $title = $_POST['title'];

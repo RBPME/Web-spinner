@@ -14,6 +14,7 @@
                 <input type="password" name="pass" id="pass"> <button type="button" onclick="clicked()"><img src="Find et billede senere" width="8rem"></button> <br>
                 <input type="submit" value="Log in">
             </form>
+            <a href="index.php">Back to main menu</a>
             
             <?php 
                 require_once "./SQL/DB_handleling/connect.php";
