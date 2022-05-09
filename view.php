@@ -29,25 +29,27 @@
         <hr>
         <br>
         <h2>Kommenter</h2>
-        <form method="post" action="#">
-            <textarea name="comm" id="" cols="30" rows="10"></textarea> <br>
-            <input type="submit">
-        </form>
 
         <?php 
-            if ($_SESSION["comm"] != $_POST["comm"]) {
-                $_SESSION["comm"] = $_POST["comm"];
-                $comment = $_POST["comm"];
-                preformQuery("INSERT INTO comment (parentId, comment) VALUES ('$id', '$comment')");
-
-                
+            if ($_SESSION["LoggedIn"]) {
+                echo "<form method='post' action='#'><textarea name='comm' id='' cols='30' rows='10'></textarea> <br><input type='submit' name='comt'></form>";
+    
+                if (isset($_POST["comt"])) {
+                    $comment = $_POST["comm"];
+                    $user = $_SESSION["UserId"];
+                    preformQuery("INSERT INTO comment (parentId, comment, id) VALUES ('$id', '$comment', '$user')");
+    
+                    
+                }
             }
         ?>
         <hr>
         <?php 
             $result = preformQuery("SELECT * FROM comment WHERE parentId = ".$id."");
-            while ($row = mysqli_fetch_array($result)) {
-
+            while ($row = mysqli_fetch_array($result)) {   
+                $res = preformQuery("SELECT * FROM user WHERE id = ".$row['id']);
+                $ro = mysqli_fetch_array($res);
+                echo "<h5>".$ro['username']."</h5><br>";
                 echo str_replace("\n", "<br>", $row['comment']);
                 echo "<hr>";
                 
