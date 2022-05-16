@@ -15,16 +15,14 @@
         $id = $_GET['id'];
         $result = preformQuery("SELECT * FROM content WHERE id = ".$id."");
         $row = mysqli_fetch_array($result);
-    ?>
 
-    <h1><?php echo $row['title']; ?></h1> <br>
-        <?php
-        
-            echo str_replace("\n", "<br>", $row['text']);
-            echo '<br><br>';
-            echo "<img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'>";
-        
-        ?>
+
+        echo "<h1>".$row['title']."</h1> <br>";
+        echo str_replace("\n", "<br>", $row['text']);
+        echo '<br><br>';
+        echo "<img src='https://rasm245r.elev.vtg.dk/".$row['imgpath']."' width='100px'>";
+    
+    ?>
 
         <hr>
         <br>
